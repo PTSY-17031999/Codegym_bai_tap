@@ -43,32 +43,27 @@ namespace Codegym_bai_tap
         }
         static void bai_tap_buoi_2()
         {
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+
             Console.Write("Nhap ngay sinh (dd/MM/yyyy):");
-            DateTime Ngay_sinh = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
+            string du_lieu_vao = Console.ReadLine();
+            DateTime Ngay_sinh = DateTime.Parse( du_lieu_vao);
             DateTime Thoi_gian_hien_tai = DateTime.Now;
+           
 
-            TimeSpan Thoi_gian_toi_ngay_sinh_nhat = Ngay_sinh.Subtract(Thoi_gian_hien_tai);
-            if (int.Parse(((Thoi_gian_toi_ngay_sinh_nhat).Days).ToString()) > 0)
+           
+
+            DateTime Ngay_sinh_nhat_nam_nay = new DateTime(Thoi_gian_hien_tai.Year, Ngay_sinh.Month, Ngay_sinh.Day);
+
+            if (Thoi_gian_hien_tai < Ngay_sinh_nhat_nam_nay)
             {
-                Console.WriteLine("So ngay con lai den sinh nhat 1: " + Thoi_gian_toi_ngay_sinh_nhat.Days);
+                Console.WriteLine("So ngay con lai den sinh nhat 1: " + Math.Round(( Ngay_sinh_nhat_nam_nay - Thoi_gian_hien_tai).TotalDays , 0));
+            } else
+            {
+                Console.WriteLine("So ngay con lai den sinh nhat 2: " + Math.Round((Ngay_sinh_nhat_nam_nay.AddYears(1) - Thoi_gian_hien_tai).TotalDays, 0));
             }
 
-            if (int.Parse(((Thoi_gian_toi_ngay_sinh_nhat).Days).ToString()) == 0)
-            {
-                Console.WriteLine("Chuc ban co mot ngay sinh nhat vui ve !");
-            }
-
-            if (int.Parse(((Thoi_gian_toi_ngay_sinh_nhat).Days).ToString()) < 0)
-            {
-                // Móc thời gian 01/01/1900
-                DateTime Thoi_gian_moc_thoi_gian = new DateTime(1900, 01, 01);
-                // Ngày sinh nhật tiếp theo 
-                DateTime Ngay_sinh_nhat_tiep_theo = new DateTime(Ngay_sinh.Year + 1, Ngay_sinh.Month, Ngay_sinh.Day);
-                // Số ngày tới sinh nhật
-                TimeSpan Thoi_gian_tu_moc_toi_ngay_sinh_nhat_2 = Thoi_gian_moc_thoi_gian.Subtract(Ngay_sinh_nhat_tiep_theo);
-                TimeSpan Thoi_gian_tu_moc_toi_hom_nay = Thoi_gian_moc_thoi_gian.Subtract(Thoi_gian_hien_tai);
-                Console.WriteLine("So ngay con lai den sinh nhat 2: " + (Thoi_gian_tu_moc_toi_hom_nay.Days - Thoi_gian_tu_moc_toi_ngay_sinh_nhat_2.Days));
-            }
+            
         }
 
     static void Bai_tap_1d()
