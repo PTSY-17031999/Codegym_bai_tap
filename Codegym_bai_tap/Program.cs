@@ -11,21 +11,25 @@ namespace Codegym_bai_tap
         static void Main(string[] args)
         {
 
+            /************************/
+            // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
+            bai_tap_giai_phuong_trinh_bac_2();
+
 
             /************************/
             //Bài tập buổi 2 Tính số ngày tới sinh nhật
-            bai_tap_buoi_2();
+            // bai_tap_buoi_2();
 
 
             /*************************/
             //Bài tập xây dựng ứng dụng tiền tệ 
-           // CHƯA XONG
+            // CHƯA XONG
 
 
             /*************************/
             // Bài tập buổi 1c: Hiện thị lời chào
             //Bai_tap_buoi_1c();
-            
+
 
             /*************************/
             // Bài tập buổi 1b: Sử dụng toán tử
@@ -41,6 +45,55 @@ namespace Codegym_bai_tap
 
             Console.ReadKey();
         }
+
+
+     static void bai_tap_giai_phuong_trinh_bac_2()
+        {
+            Console.WriteLine("********** Giai phuong trinh bac 2 Ax^2 + Bx + C = 0 **********");
+            double a_3a = 0, b_3a = 0, c_3a = 0;
+            Console.Write("Hay nhap so A: ");
+            String Input_a_3a = Console.ReadLine();
+            Console.Write("Hay nhap so B: ");
+            String Input_b_3a = Console.ReadLine();
+            Console.Write("Hay nhap so C: ");
+            String Input_c_3a = Console.ReadLine();
+
+            while (!double.TryParse(Input_a_3a, out a_3a))
+            {
+                Console.Write("Hay nhap lai so A: ");
+                Input_a_3a = Console.ReadLine();
+            }
+            while (!double.TryParse(Input_b_3a, out b_3a))
+            {
+                Console.Write("Hay nhap lai so B: ");
+                Input_b_3a = Console.ReadLine();
+            }
+            while (!double.TryParse(Input_c_3a, out c_3a))
+            {
+                Console.Write("Hay nhap lai so C: ");
+                Input_c_3a = Console.ReadLine();
+            }
+
+            double dt = b_3a * b_3a - (4 * a_3a * c_3a);
+
+            if (dt == 0)
+            {
+                Console.WriteLine("Phuong trinh co 1 nghiem la : " + ((0 - b_3a) / (2 * a_3a)));
+            }
+            else if (dt > 0)
+            {
+                var x1 = (-b_3a - Math.Sqrt(b_3a)) / (2 * a_3a);
+                var x2 = (-b_3a + Math.Sqrt(b_3a)) / (2 * a_3a);
+                Console.WriteLine("Phuong trinh co 2 nghiem la : " + " X1= " + ((-b_3a - Math.Sqrt(b_3a)) / (2 * a_3a)) + ", X2= " + ((-b_3a + Math.Sqrt(b_3a)) / (2 * a_3a)));
+            }
+            else
+            {
+                Console.WriteLine("Phuong trinh vo nghiem");
+            }
+
+        }
+
+
         static void bai_tap_buoi_2()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
