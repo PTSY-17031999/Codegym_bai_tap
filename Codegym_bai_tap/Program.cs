@@ -10,14 +10,23 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
+            /************************/
+            // Bài tập ĐỌC SỐ THANH CHỮ
+            Bai_tap_chuyen_so_thanh_chu();
+
+
+            /************************/
+            // Bài tập tính chỉ số căn nặng BMI
+            //bai_tap_tinh_chi_so_BMI();
+
 
             /************************/
             // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
-            bai_tap_giai_phuong_trinh_bac_2();
+            //bai_tap_giai_phuong_trinh_bac_2();
 
 
             /************************/
-            //Bài tập buổi 2 Tính số ngày tới sinh nhật
+            //Tính số ngày tới sinh nhật
             // bai_tap_buoi_2();
 
 
@@ -27,23 +36,127 @@ namespace Codegym_bai_tap
 
 
             /*************************/
-            // Bài tập buổi 1c: Hiện thị lời chào
+            //Hiện thị lời chào
             //Bai_tap_buoi_1c();
 
 
             /*************************/
-            // Bài tập buổi 1b: Sử dụng toán tử
+            //Sử dụng toán tử
             //Bai_tap_buoi_1b();
 
 
             /************************/
-            //Bài tập buổi 1a: Hiện thị thời gian hệ thống
+            //Hiện thị thời gian hệ thống
             //Bai_tap_buoi_1a();
 
 
 
 
             Console.ReadKey();
+        }
+
+
+
+    static void Bai_tap_chuyen_so_thanh_chu()
+        {
+            double so_can_chuyen_doi = 0;
+
+            Console.Write("Hay nhap so ban can chuyen doi sang chu: ");
+            String Input_so = Console.ReadLine();
+
+            while (!double.TryParse(Input_so, out so_can_chuyen_doi))
+            {
+                Console.Write("Hay nhap lai con so: ");
+                Input_so = Console.ReadLine();
+            }
+
+            Console.WriteLine(so_can_chuyen_doi);
+            string Out_chu = "";
+            Console.WriteLine("fttt" + int.Parse(Input_so.Substring(0, 1)));
+            Console.WriteLine("fttt2" + Input_so);
+
+
+
+            for (int i = 0; i < Input_so.Length; i++)
+            {
+                switch (int.Parse(Input_so.Substring(0, 1)))
+                {
+                    case 0:
+                        Out_chu = Out_chu + " Khong";
+                        break;
+                    case 1:
+                        Out_chu = Out_chu + " Mot";
+                        break;
+                    case 2:
+                        Out_chu = Out_chu + " Hai";
+                        break;
+                    case 3:
+                        Out_chu = Out_chu + " Ba";
+                        break;
+                    case 4:
+                        Out_chu = Out_chu + " Bon";
+                        break;
+                    case 5:
+                        Out_chu = Out_chu + " Nam";
+                        break;
+                    case 6:
+                        Out_chu = Out_chu + " Sau";
+                        break;
+                    case 7:
+                        Out_chu = Out_chu + " Bay";
+                        break;
+                    case 8:
+                        Out_chu = Out_chu + " Tam";
+                        break;
+                    case 9:
+                        Out_chu = Out_chu + " Chin";
+                        break;
+                }
+                //Console.WriteLine("RRR"+Input_so);
+
+            }
+
+            Console.WriteLine("Thanh chu: " + Out_chu);
+
+        }
+        static void bai_tap_tinh_chi_so_BMI()
+        {
+            double Can_nang = 0, Chieu_cao = 0, bmi = 0;
+
+            Console.Write("Hay nhap can nang cua ban (Kg): ");
+            String Input_Can_nang = Console.ReadLine();
+            Console.Write("Hay nhap chieu cao cua ban (cm): ");
+            String Input_Chieu_cao = Console.ReadLine();
+
+            while (!double.TryParse(Input_Can_nang, out Can_nang))
+            {
+                Console.Write("Can nang phai la so, hay nhap lai can nang (Kg): ");
+                Input_Can_nang = Console.ReadLine();
+            }
+            while (!double.TryParse(Input_Chieu_cao, out Chieu_cao))
+            {
+                Console.Write("Chieu cao phai là so, hay nhap lai chieu cao (Cm): ");
+                Input_Chieu_cao = Console.ReadLine();
+            }
+
+            bmi = Can_nang / ((Chieu_cao * 2) / 100);
+
+            if (bmi < 18.5)
+            {
+                Console.Write("Ban dang gay, de dat duoc than hinh dep hay tang len: " + ((18.5 * 2 * (Chieu_cao / 100)) - Can_nang) + " kg");
+            }
+            else if (bmi < 25)
+            {
+                Console.Write("Than hinh qua ban dang dep! ");
+            }
+            else if (bmi < 30)
+            {
+                Console.Write("Ban dang map, de dat duoc than hinh dep hay giam di: " + (Can_nang - (25 * 2 * (Chieu_cao / 100))) + " kg");
+            }
+            else
+            {
+                Console.Write("Ban dang qua map, de dat duoc than hinh dep hay giam di: " + (Can_nang - (25 * 2 * (Chieu_cao / 100))) + " kg");
+            }
         }
 
 
@@ -94,7 +207,7 @@ namespace Codegym_bai_tap
         }
 
 
-        static void bai_tap_buoi_2()
+    static void bai_tap_buoi_2()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
