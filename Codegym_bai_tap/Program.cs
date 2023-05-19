@@ -61,10 +61,10 @@ namespace Codegym_bai_tap
         {
             double so_can_chuyen_doi = 0;
 
-            Console.Write("Hay nhap so ban can chuyen doi sang chu: ");
+            Console.Write("Hay nhap so ban can chuyen doi sang chu tu 1 - 999999999: ");
             String Input_so = Console.ReadLine();
 
-            while (!double.TryParse(Input_so, out so_can_chuyen_doi))
+            while (!double.TryParse(Input_so, out so_can_chuyen_doi)|| Input_so.Length>9)
             {
                 Console.Write("Hay nhap lai con so: ");
                 Input_so = Console.ReadLine();
@@ -75,43 +75,84 @@ namespace Codegym_bai_tap
 
 
 
-            for (int i = 0; i < Input_so.Length; i++)
+            for (int i = Input_so.Length; i = 0; i--)
             {
+
+                switch (i)
+                {
+                    case 2:
+                        Out_chu = "Muoi " + Out_chu;
+                        break;
+                    case 3:
+                        Out_chu = "Tram " + Out_chu;
+                        break;
+                    case 4:
+                        Out_chu = "Ngan " + Out_chu;
+                        break;
+                    case 5:
+                        Out_chu = "Muoi " + Out_chu;
+                        break;
+                    case 6:
+                        Out_chu = "Tram " + Out_chu;
+                        break;
+                    case 7:
+                        Out_chu = "Nghin " + Out_chu;
+                        break;
+                    case 8:
+                        Out_chu = "Ty " + Out_chu;
+                        break;
+                    case 9:
+                        Out_chu = "Chuc " + Out_chu;
+                        break;
+                    default:
+                        break;
+
                 switch (int.Parse(Input_so.Substring(i, 1)))
                 {
                     case 0:
-                        Out_chu = Out_chu + " Khong";
+                        Out_chu = "Khong " + Out_chu;
                         break;
                     case 1:
-                        Out_chu = Out_chu + " Mot";
+                        Out_chu = "Mot " + Out_chu;
                         break;
                     case 2:
-                        Out_chu = Out_chu + " Hai";
+                        Out_chu = "Hai " + Out_chu;
                         break;
                     case 3:
-                        Out_chu = Out_chu + " Ba";
+                        Out_chu = "Ba " + Out_chu;
                         break;
                     case 4:
-                        Out_chu = Out_chu + " Bon";
+                        Out_chu = "Bon " + Out_chu;
                         break;
                     case 5:
-                        Out_chu = Out_chu + " Nam";
+                        Out_chu = "Nam " + Out_chu;
                         break;
                     case 6:
-                        Out_chu = Out_chu + " Sau";
+                        Out_chu = "Sau " + Out_chu;
                         break;
                     case 7:
-                        Out_chu = Out_chu + " Bay";
+                        Out_chu = "Bay " + Out_chu;
                         break;
                     case 8:
-                        Out_chu = Out_chu + " Tam";
+                        Out_chu = "Tam " + Out_chu;
                         break;
                     case 9:
-                        Out_chu = Out_chu + " Chin";
+                        Out_chu = "Chin " + Out_chu;
                         break;
                     default:
                         break;
                 }
+
+                
+                }
+
+
+
+
+
+
+
+
                
 
             }
