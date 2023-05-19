@@ -84,6 +84,7 @@ namespace Codegym_bai_tap
                         Out_chu = Out_chu + " Khong";
                         break;
                     case 1:
+                        //if(i != )
                         Out_chu = Out_chu + " Mot";
                         break;
                     case 2:
