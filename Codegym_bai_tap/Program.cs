@@ -72,14 +72,12 @@ namespace Codegym_bai_tap
 
             Console.WriteLine(so_can_chuyen_doi);
             string Out_chu = "";
-            Console.WriteLine("fttt" + int.Parse(Input_so.Substring(0, 1)));
-            Console.WriteLine("fttt2" + Input_so);
 
 
 
             for (int i = 0; i < Input_so.Length; i++)
             {
-                switch (int.Parse(Input_so.Substring(0, 1)))
+                switch (int.Parse(Input_so.Substring(i, 1)))
                 {
                     case 0:
                         Out_chu = Out_chu + " Khong";
@@ -111,8 +109,10 @@ namespace Codegym_bai_tap
                     case 9:
                         Out_chu = Out_chu + " Chin";
                         break;
+                    default:
+                        break;
                 }
-                //Console.WriteLine("RRR"+Input_so);
+               
 
             }
 
@@ -291,6 +291,6 @@ namespace Codegym_bai_tap
 
 
 
-            
-        }
+
     }
+}
