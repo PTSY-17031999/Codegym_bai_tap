@@ -57,14 +57,14 @@ namespace Codegym_bai_tap
 
 
 
-    static void Bai_tap_chuyen_so_thanh_chu()
+        static void Bai_tap_chuyen_so_thanh_chu()
         {
             double so_can_chuyen_doi = 0;
 
-            Console.Write("Hay nhap so ban can chuyen doi sang chu tu 1 - 999999999: ");
+            Console.Write("Hay nhap so ban can chuyen doi sang chu: ");
             String Input_so = Console.ReadLine();
 
-            while (!double.TryParse(Input_so, out so_can_chuyen_doi)|| Input_so.Length>9)
+            while (!double.TryParse(Input_so, out so_can_chuyen_doi))
             {
                 Console.Write("Hay nhap lai con so: ");
                 Input_so = Console.ReadLine();
@@ -75,91 +75,82 @@ namespace Codegym_bai_tap
 
 
 
-            for (int i = Input_so.Length; i = 0; i--)
+            for (int i = 0; i < Input_so.Length; i++)
             {
-
-                switch (i)
-                {
-                    case 2:
-                        Out_chu = "Muoi " + Out_chu;
-                        break;
-                    case 3:
-                        Out_chu = "Tram " + Out_chu;
-                        break;
-                    case 4:
-                        Out_chu = "Ngan " + Out_chu;
-                        break;
-                    case 5:
-                        Out_chu = "Muoi " + Out_chu;
-                        break;
-                    case 6:
-                        Out_chu = "Tram " + Out_chu;
-                        break;
-                    case 7:
-                        Out_chu = "Nghin " + Out_chu;
-                        break;
-                    case 8:
-                        Out_chu = "Ty " + Out_chu;
-                        break;
-                    case 9:
-                        Out_chu = "Chuc " + Out_chu;
-                        break;
-                    default:
-                        break;
-
                 switch (int.Parse(Input_so.Substring(i, 1)))
                 {
                     case 0:
-                        Out_chu = "Khong " + Out_chu;
+                        Out_chu = Out_chu + " Khong";
                         break;
                     case 1:
-                        Out_chu = "Mot " + Out_chu;
+                        Out_chu = Out_chu + " Mot";
                         break;
                     case 2:
-                        Out_chu = "Hai " + Out_chu;
+                        Out_chu = Out_chu + " Hai";
                         break;
                     case 3:
-                        Out_chu = "Ba " + Out_chu;
+                        Out_chu = Out_chu + " Ba";
                         break;
                     case 4:
-                        Out_chu = "Bon " + Out_chu;
+                        Out_chu = Out_chu + " Bon";
                         break;
                     case 5:
-                        Out_chu = "Nam " + Out_chu;
+                        Out_chu = Out_chu + " Nam";
                         break;
                     case 6:
-                        Out_chu = "Sau " + Out_chu;
+                        Out_chu = Out_chu + " Sau";
                         break;
                     case 7:
-                        Out_chu = "Bay " + Out_chu;
+                        Out_chu = Out_chu + " Bay";
                         break;
                     case 8:
-                        Out_chu = "Tam " + Out_chu;
+                        Out_chu = Out_chu + " Tam";
                         break;
                     case 9:
-                        Out_chu = "Chin " + Out_chu;
+                        Out_chu = Out_chu + " Chin";
+                        break;
+                }
+
+                switch (Input_so.Length -i)
+                {
+                    case 2:
+                        Out_chu = Out_chu + " Muoi";
+                        break;
+                    case 3:
+                        Out_chu =  Out_chu + " Tram";
+                        break;
+                    case 4:
+                        Out_chu = Out_chu + " Ngan" ;
+                        break;
+                    case 5:
+                        Out_chu = Out_chu + " Muoi";
+                        break;
+                    case 6:
+                        Out_chu = Out_chu + " Tram";
+                        break;
+                    case 7:
+                        Out_chu =  Out_chu + " Nghin";
+                        break;
+                    case 8:
+                        Out_chu = Out_chu + " Ty";
+                        break;
+                    case 9:
+                        Out_chu = Out_chu + " Chuc";
                         break;
                     default:
                         break;
                 }
+            
 
-                
-                }
-
-
-
-
-
-
-
-
-               
 
             }
 
             Console.WriteLine("Thanh chu: " + Out_chu);
 
         }
+
+
+
         static void bai_tap_tinh_chi_so_BMI()
         {
             double Can_nang = 0, Chieu_cao = 0, bmi = 0;
@@ -328,7 +319,7 @@ namespace Codegym_bai_tap
 
 
 
-
+        
 
 
 
