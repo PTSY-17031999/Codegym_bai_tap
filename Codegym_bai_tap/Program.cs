@@ -59,18 +59,19 @@ namespace Codegym_bai_tap
 
         static void Bai_tap_chuyen_so_thanh_chu()
         {
+
+            Console.WriteLine(/************************************/);
             double so_can_chuyen_doi = 0;
 
             Console.Write("Hay nhap so ban can chuyen doi sang chu: ");
             String Input_so = Console.ReadLine();
 
-            while (!double.TryParse(Input_so, out so_can_chuyen_doi))
+            while (!double.TryParse(Input_so, out so_can_chuyen_doi) || Input_so.Length > 9)
             {
                 Console.Write("Hay nhap lai con so: ");
                 Input_so = Console.ReadLine();
             }
 
-            Console.WriteLine(so_can_chuyen_doi);
             string Out_chu = "";
 
 
