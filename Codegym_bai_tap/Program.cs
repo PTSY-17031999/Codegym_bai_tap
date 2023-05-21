@@ -10,9 +10,15 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
+
+            /*************************/
+            //Tìm số nguyên tố
+            //tim_so_nguyen_to();
+           
+
             /************************/
             // Bài tập ĐỌC SỐ THANH CHỮ
-            Bai_tap_chuyen_so_thanh_chu();
+            //Bai_tap_chuyen_so_thanh_chu();
 
 
             /************************/
@@ -56,6 +62,41 @@ namespace Codegym_bai_tap
         }
 
 
+
+
+
+        static void tim_so_nguyen_to()
+        {
+            string Input_so;
+            int dem_ = 1;
+            double so_can_kiem_tra;
+
+            do
+            {
+                Console.Write("Nhap so ban muon kiem tra: ");
+                Input_so = Console.ReadLine();
+            }
+            while (!double.TryParse(Input_so, out so_can_kiem_tra));
+
+            if (so_can_kiem_tra % 2 == 0 || so_can_kiem_tra <= 2)
+            {
+                Console.WriteLine(so_can_kiem_tra + " Khong phai la so nguyen to ");
+                Console.ReadKey();
+                return;
+            }
+
+            for (int i = 3; i < so_can_kiem_tra; i++)
+            {
+                if (so_can_kiem_tra % i == 0)
+                {
+                    Console.WriteLine(so_can_kiem_tra + " Khong phai la so nguyen to ");
+                    Console.ReadKey();
+                    return;
+                }
+            }
+
+            Console.WriteLine(so_can_kiem_tra + " La so nguyen to");
+        }
 
         static void Bai_tap_chuyen_so_thanh_chu()
         {
