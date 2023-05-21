@@ -14,7 +14,7 @@ namespace Codegym_bai_tap
             /*************************/
             //Tìm số nguyên tố
             //tim_so_nguyen_to();
-           
+
 
             /************************/
             // Bài tập ĐỌC SỐ THANH CHỮ
@@ -38,7 +38,7 @@ namespace Codegym_bai_tap
 
             /*************************/
             //Bài tập xây dựng ứng dụng tiền tệ 
-            // CHƯA XONG
+            ung_dung_chuyen_doi_tien_te();
 
 
             /*************************/
@@ -307,24 +307,42 @@ namespace Codegym_bai_tap
             
         }
 
-    static void Bai_tap_1d()
-        {/*
+    static void ung_dung_chuyen_doi_tien_te()
+        {
             int ti_gia = 23000;
-            Console.WriteLine("Nhập số 1 để chuyển đổi VND sang USD");
-            Console.WriteLine("Nhập số 2 để chuyển đổi USD sang VND");
-            int.TryParse(Console.ReadLine(),
-            // Nếu người dùng nhập chữ
-            if (int.TryParse(Console.ReadLine(), ))
-                int lua_chon_1d = int.Parse(Console.ReadLine());
-            Console.WriteLine(lua_chon_1d);
-            if (lua_chon_1d == 1)
+            string Input_choose;
+            string Input_so_tien;
+            double Chooise_out;
+            double So_tien;
+
+
+            do
             {
-                Console.Write("Nhập số tiền VND: ");
-            }*/
+                Console.WriteLine("Nhap so 1 neu ban muon chuyen VND -> USD ");
+                Console.WriteLine("Nhap so 2 neu ban muon chuyen USD -> VND ");
+                Input_choose = Console.ReadLine();
+            }
+            while (!double.TryParse(Input_choose, out Chooise_out) || Chooise_out > 2);
+
+            do
+            {
+                Console.WriteLine("Nhap so tien ban muon chuyen doi");
+                Input_so_tien = Console.ReadLine();
+            }
+            while (!double.TryParse(Input_so_tien, out So_tien));
+            if (Chooise_out == 1)
+            {
+                Console.WriteLine(So_tien + " VND = " + So_tien / ti_gia + " USD");
+            }
+            else
+            {
+                Console.WriteLine(So_tien + " USD = " + So_tien * ti_gia + " VND");
+            }
+
         }
 
 
-    static void Bai_tap_buoi_1c()
+        static void Bai_tap_buoi_1c()
         { 
             Console.WriteLine("Nhập tên của bạn: ");
             string ten_1c = Console.ReadLine();
