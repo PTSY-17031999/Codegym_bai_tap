@@ -10,15 +10,92 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
-            /* Menu
- Draw the triangle
- Draw the square
- Draw the rectangle
- Exit
- Enter your choice:*/
+
+            /*************************/
+            // Tính tổng phần tử trong mảng
+            tinh_tong_cac_so_trong_mang();
+            /***/
+
+
+
 
             /*************************/
             // Xây dựng ứng dụng menu và hiện thị các loại hình
+            //thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh();
+
+            /*************************/
+            //Tìm số nguyên tố
+            //tim_so_nguyen_to();
+
+
+            /************************/
+            // Bài tập ĐỌC SỐ THANH CHỮ
+            //Bai_tap_chuyen_so_thanh_chu();
+
+
+            /************************/
+            // Bài tập tính chỉ số căn nặng BMI
+            //bai_tap_tinh_chi_so_BMI();
+
+
+            /************************/
+            // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
+            //bai_tap_giai_phuong_trinh_bac_2();
+
+
+            /************************/
+            //Tính số ngày tới sinh nhật
+            // bai_tap_buoi_2();
+
+
+            /*************************/
+            //Bài tập xây dựng ứng dụng tiền tệ 
+            //ung_dung_chuyen_doi_tien_te();
+
+
+            /*************************/
+            //Hiện thị lời chào
+            //Bai_tap_buoi_1c();
+
+
+            /*************************/
+            //Sử dụng toán tử
+            //Bai_tap_buoi_1b();
+
+
+            /************************/
+            //Hiện thị thời gian hệ thống
+            //Bai_tap_buoi_1a();
+
+
+
+
+
+
+            Console.ReadKey();
+        }
+       static void tinh_tong_cac_so_trong_mang()
+        {
+            Console.WriteLine("Nhap so phan tu trong mang: ");
+            int so_phan_tu = int.Parse(Console.ReadLine().ToString());
+            int tong_mang = 0;
+
+            int[] mang_phan_tu = new int[so_phan_tu];
+            for (int i = 0; i < so_phan_tu; i++)
+            {
+                Console.WriteLine("Nhap du lieu cho mang phan tu thu " + (i + 1) + " : ");
+                mang_phan_tu[i] = int.Parse(Console.ReadLine().ToString());
+            }
+            for (int i = 0; i < so_phan_tu; i++)
+            {
+                tong_mang = tong_mang + mang_phan_tu[i];
+            }
+            Console.WriteLine("Tong cac phan tu trong mang là :  " + tong_mang);
+        }
+
+
+        static void thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh()
+        {
             String Input_lua_chon;
             double lua_chon;
 
@@ -26,192 +103,139 @@ namespace Codegym_bai_tap
             string Input_b;
             double a = 0; // cạnh hình vuông, chiều dai hình chữa nhật, đấy hình tam giac
             double b = 0; // Chiều cao chữa nhật và tam giac
-            
-
-        
-         do
-         {
-             Console.WriteLine("Nhap so 1 neu ban muon ve hinh vuong ");
-             Console.WriteLine("Nhap so 2 neu ban muon ve hinh chu nhat");
-             Console.WriteLine("Nhap so 3 neu ban muon ve tam giac vuong");
-             //Console.WriteLine("Nhap so 4 neu ban muon ve tam giac can");
-             Console.WriteLine("Nhap so 4 neu ban muon thoát");
-             Input_lua_chon = Console.ReadLine();
-
-             //Input_choose = Console.ReadLine();
-         }
-
-         while (!double.TryParse(Input_lua_chon, out lua_chon) || lua_chon > 5 || lua_chon <= 0);
-
-         switch (lua_chon)
-         {
-             case 1:
-                 {
-                     do
-                     {
-                         Console.WriteLine("Nhap kich hinh vuong: ");
-                         Input_a = Console.ReadLine();
-                     }
-                     while (!double.TryParse(Input_a, out a) || a > 20 || a < 1);
-
-                     for (int i = 1; i <= a; i++)
-                     {
-
-                         for (int i2 = 1; i2 <= a; i2++)
-                         { 
-                             Console.Write("* ");
-                             if(i2 == a)
-                             {
-                                 Console.WriteLine("");
-                             }
-                         }
-
-                     }
-                         break;
-                 }
-             case 2:
-                 {
-                     do
-                     {
-                         Console.WriteLine("Nhap chieu dai hinh chu nhat: ");
-                         Input_a = Console.ReadLine();
-                         Console.WriteLine("Nhap chieu rộng hinh chu nhat: ");
-                         Input_b = Console.ReadLine();
-                     }
-                     while (!double.TryParse(Input_a, out a) || !double.TryParse(Input_b, out b) || a > 20 || b> 20 || a < 1 || b < 1);
-
-                     for (int i = 1; i <= b; i++)
-                     {
-
-                         for (int i2 = 1; i2 <= a; i2++)
-                         {
-                             Console.Write("* ");
-                             if (i2 == a)
-                             {
-                                 Console.WriteLine("");
-                             }
-                         }
-
-                     }
-                     break;
-                 }
-             case 3:
-                 {
-                     do
-                     {
-                         Console.WriteLine("Nhap chieu dai day: ");
-                         Input_a = Console.ReadLine();
-                         Console.WriteLine("Nhap chieu cao lon hon 2: ");
-                         Input_b = Console.ReadLine();
-                     }
-                     while (!double.TryParse(Input_a, out a) || !double.TryParse(Input_b, out b) || a > 20 || b > 20 || a < 2 || b < 2);
-
-                     for (int i = 1; i <= b+1; i++)
-                     {
-
-                         for (int i2 = i; i2 <= a; i2++)
-                         {
-                             Console.Write("* ");
-                             if (i2 == a)
-                             {
-                                 Console.WriteLine("");
-                             }
-                         }
-
-                     }
-                     break;
-                 }
-             case 4:
-                 {
-                    return;
-
-                    do
-                     {
-                         Console.WriteLine("Nhap chieu dai day phai la so le lon hon 3: ");
-                         Input_a = Console.ReadLine();
-                         Console.WriteLine("Nhap chieu cao lon hon 2: ");
-                         Input_b = Console.ReadLine();
-                     }
-                     while (!double.TryParse(Input_a, out a) || !double.TryParse(Input_b, out b) || a > 20 || b > 20 || a < 3 || b < 2);
-
-                     for (int i = 0; i <= b ; i++)
-                     {
-
-                         for (int i2 = i; i2 <= a; i2++)
-                         {
-                             Console.Write("  ");
-                             if (i2 == a/2 - i || i2 == a/2 + i)
-                             {
-                                 Console.Write("*");
-                             }
-                             if(i2 > a)
-                             {
-                                 Console.WriteLine("");
-                             }
-                         }
-
-                     }
-                     break;
-
-                 }
-             case 5: return;
-             default:break;
-         }
-        
-
-        /*************************/
-        //Tìm số nguyên tố
-        //tim_so_nguyen_to();
-
-
-        /************************/
-        // Bài tập ĐỌC SỐ THANH CHỮ
-        //Bai_tap_chuyen_so_thanh_chu();
-
-
-        /************************/
-        // Bài tập tính chỉ số căn nặng BMI
-        //bai_tap_tinh_chi_so_BMI();
-
-
-        /************************/
-        // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
-        //bai_tap_giai_phuong_trinh_bac_2();
-
-
-        /************************/
-        //Tính số ngày tới sinh nhật
-        // bai_tap_buoi_2();
-
-
-        /*************************/
-        //Bài tập xây dựng ứng dụng tiền tệ 
-        //ung_dung_chuyen_doi_tien_te();
-
-
-        /*************************/
-        //Hiện thị lời chào
-        //Bai_tap_buoi_1c();
-
-
-        /*************************/
-        //Sử dụng toán tử
-        //Bai_tap_buoi_1b();
-
-
-        /************************/
-        //Hiện thị thời gian hệ thống
-        //Bai_tap_buoi_1a();
 
 
 
+            do
+            {
+                Console.WriteLine("Nhap so 1 neu ban muon ve hinh vuong ");
+                Console.WriteLine("Nhap so 2 neu ban muon ve hinh chu nhat");
+                Console.WriteLine("Nhap so 3 neu ban muon ve tam giac vuong");
+                //Console.WriteLine("Nhap so 4 neu ban muon ve tam giac can");
+                Console.WriteLine("Nhap so 4 neu ban muon thoát");
+                Input_lua_chon = Console.ReadLine();
 
+                //Input_choose = Console.ReadLine();
+            }
 
+            while (!double.TryParse(Input_lua_chon, out lua_chon) || lua_chon > 5 || lua_chon <= 0);
 
-        Console.ReadKey();
+            switch (lua_chon)
+            {
+                case 1:
+                    {
+                        do
+                        {
+                            Console.WriteLine("Nhap kich hinh vuong: ");
+                            Input_a = Console.ReadLine();
+                        }
+                        while (!double.TryParse(Input_a, out a) || a > 20 || a < 1);
+
+                        for (int i = 1; i <= a; i++)
+                        {
+
+                            for (int i2 = 1; i2 <= a; i2++)
+                            {
+                                Console.Write("* ");
+                                if (i2 == a)
+                                {
+                                    Console.WriteLine("");
+                                }
+                            }
+
+                        }
+                        break;
+                    }
+                case 2:
+                    {
+                        do
+                        {
+                            Console.WriteLine("Nhap chieu dai hinh chu nhat: ");
+                            Input_a = Console.ReadLine();
+                            Console.WriteLine("Nhap chieu rộng hinh chu nhat: ");
+                            Input_b = Console.ReadLine();
+                        }
+                        while (!double.TryParse(Input_a, out a) || !double.TryParse(Input_b, out b) || a > 20 || b > 20 || a < 1 || b < 1);
+
+                        for (int i = 1; i <= b; i++)
+                        {
+
+                            for (int i2 = 1; i2 <= a; i2++)
+                            {
+                                Console.Write("* ");
+                                if (i2 == a)
+                                {
+                                    Console.WriteLine("");
+                                }
+                            }
+
+                        }
+                        break;
+                    }
+                case 3:
+                    {
+                        do
+                        {
+                            Console.WriteLine("Nhap chieu dai day: ");
+                            Input_a = Console.ReadLine();
+                            Console.WriteLine("Nhap chieu cao lon hon 2: ");
+                            Input_b = Console.ReadLine();
+                        }
+                        while (!double.TryParse(Input_a, out a) || !double.TryParse(Input_b, out b) || a > 20 || b > 20 || a < 2 || b < 2);
+
+                        for (int i = 1; i <= b + 1; i++)
+                        {
+
+                            for (int i2 = i; i2 <= a; i2++)
+                            {
+                                Console.Write("* ");
+                                if (i2 == a)
+                                {
+                                    Console.WriteLine("");
+                                }
+                            }
+
+                        }
+                        break;
+                    }
+                case 4:
+                    {
+                        return;
+
+                        do
+                        {
+                            Console.WriteLine("Nhap chieu dai day phai la so le lon hon 3: ");
+                            Input_a = Console.ReadLine();
+                            Console.WriteLine("Nhap chieu cao lon hon 2: ");
+                            Input_b = Console.ReadLine();
+                        }
+                        while (!double.TryParse(Input_a, out a) || !double.TryParse(Input_b, out b) || a > 20 || b > 20 || a < 3 || b < 2);
+
+                        for (int i = 0; i <= b; i++)
+                        {
+
+                            for (int i2 = i; i2 <= a; i2++)
+                            {
+                                Console.Write("  ");
+                                if (i2 == a / 2 - i || i2 == a / 2 + i)
+                                {
+                                    Console.Write("*");
+                                }
+                                if (i2 > a)
+                                {
+                                    Console.WriteLine("");
+                                }
+                            }
+
+                        }
+                        break;
+
+                    }
+                case 5: return;
+                default: break;
+            }
+
         }
-
-
 
 
 
