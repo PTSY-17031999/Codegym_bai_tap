@@ -11,34 +11,18 @@ namespace Codegym_bai_tap
         static void Main(string[] args)
         {
             /*************************/
+            // Tìm giá trị lớn nhất trong mảng
+            //tim_gia_tri_lon_nhat_trong_mang();
+           
+
+
+
+
+
+            /*************************/
             // Tìm giá trị trong mảng
-            // Nhập giá trị cho mảng
-            Console.WriteLine("Nhap so phan tu trong mang: ");
-            int so_phan_tu = int.Parse(Console.ReadLine().ToString());
+            // tim_gia_tri_tron_mang();
 
-            string [] mang_sinh_vien = new string [so_phan_tu];
-            for (int i = 0; i < so_phan_tu; i++)
-            {
-                Console.WriteLine("Nhap ten sinh vien so " + (i + 1) + " : ");
-                mang_sinh_vien [i] = Console.ReadLine();
-            }
-
-
-            Console.WriteLine("Nhap sinh vien can tim: ");
-            string ten_sinh_vien_can_tim = Console.ReadLine();
-            bool Check_sinh_vien = false;
-
-            for (int i = 0; i < so_phan_tu; i++)
-            {
-                if (mang_sinh_vien[i].Equals(ten_sinh_vien_can_tim))
-                {
-                    Console.WriteLine(" Co sinh vien nay trong danh sach");
-                    Check_sinh_vien = true;
-                }
-
-            }
-            if(Check_sinh_vien == false) Console.WriteLine(" Sinh vien nay khong co trong danh sach");
-            /***/
 
 
             /*************************/
@@ -103,6 +87,68 @@ namespace Codegym_bai_tap
 
             Console.ReadKey();
         }
+
+
+
+        static void tim_gia_tri_lon_nhat_trong_mang()
+        {
+            int so_phan_tu;
+            do
+            {
+                Console.Write("Nhap so phan tu trong mang: ");
+                so_phan_tu = int.Parse(Console.ReadLine().ToString());
+            } while (so_phan_tu >= 15);
+
+
+            int[] mang_cac_so = new int[so_phan_tu];
+
+            for (int i = 0; i < so_phan_tu; i++)
+            {
+                Console.Write("Nhap Phan tu so " + (i + 1) + " : ");
+                mang_cac_so[i] = int.Parse(Console.ReadLine().ToString());
+            }
+            int So_lon_nhat = mang_cac_so[0];
+            for (int i = 0; i < so_phan_tu; i++)
+            {
+                Console.WriteLine("Gia tri cua phan tu thu " + (i + 1) + " la : " + mang_cac_so[i]);
+                if (mang_cac_so[i] > So_lon_nhat) { So_lon_nhat = mang_cac_so[i]; }
+            }
+            Console.WriteLine("Gia tri lon nhat cua mang là: " + So_lon_nhat);
+
+        }
+        static void tim_gia_tri_tron_mang()
+        {
+            // Nhập giá trị cho mảng
+            Console.WriteLine("Nhap so phan tu trong mang: ");
+            int so_phan_tu = int.Parse(Console.ReadLine().ToString());
+
+            string[] mang_sinh_vien = new string[so_phan_tu];
+            for (int i = 0; i < so_phan_tu; i++)
+            {
+                Console.WriteLine("Nhap ten sinh vien so " + (i + 1) + " : ");
+                mang_sinh_vien[i] = Console.ReadLine();
+            }
+
+
+            Console.WriteLine("Nhap ten sinh vien can tim: ");
+            string ten_sinh_vien_can_tim = Console.ReadLine();
+            bool Check_sinh_vien = false;
+
+            for (int i = 0; i < so_phan_tu; i++)
+            {
+                if (mang_sinh_vien[i].Equals(ten_sinh_vien_can_tim))
+                {
+                    Console.WriteLine(" Co sinh vien nay trong danh sach");
+                    Check_sinh_vien = true;
+                }
+
+            }
+            if (Check_sinh_vien == false) Console.WriteLine(" Sinh vien nay khong co trong danh sach");
+        }
+
+
+
+
        static void tinh_tong_cac_so_trong_mang()
         {
             Console.WriteLine("Nhap so phan tu trong mang: ");
