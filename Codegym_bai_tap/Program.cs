@@ -11,14 +11,21 @@ namespace Codegym_bai_tap
         static void Main(string[] args)
         {
             /**************************/
+            //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
+            tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu();
+            
+
+
+
+
+            /**************************/
             //Tìm phần tử lớn nhất trong mảng hai chiều
-            Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
+            //Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
 
 
 
 
-
-        /*************************/
+            /*************************/
             // Thêm phần tử vào mảng
             //Them_phan_tu_vao_mang();
 
@@ -105,6 +112,47 @@ namespace Codegym_bai_tap
         }
 
         #region Các hàm bài tập
+
+
+
+        static void tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu() {
+
+            const int x = 3; //Kích thước bảng
+        int so_nho_nhat, so_lon_nhat; //Gía trị lớn nhất và nhỏ nhất của bảng
+        int tong_duong_cheo = 0;
+
+
+        int[,] mang_chu_so = new int[x, x];
+            //Nhập giá trị cho mảng
+            for (int i = 0; i<x; i++)
+            {
+                for (int j = 0; j<x; j++)
+                {
+                    Console.Write(" Nhap gia tri cho vi tri: [" + i + "," + j + "] : ");
+                    mang_chu_so[i, j] = int.Parse(Console.ReadLine().ToString());
+                }
+            }
+
+
+                //Tính tổng đường chéo {0:0} và {x:x}
+               for (int i = 0; i < x; i++)
+                {
+
+                 tong_duong_cheo = tong_duong_cheo + mang_chu_so[i, i];
+
+                }
+               Console.WriteLine("Tong duong cheo : " + tong_duong_cheo);
+          
+              }
+
+
+
+
+
+
+
+
+
 
         static void Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu()
         {
