@@ -10,18 +10,19 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
+            /**************************/
+            //Tìm phần tử lớn nhất trong mảng hai chiều
+            Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
 
 
 
 
 
-
-
-            /*************************/
+        /*************************/
             // Thêm phần tử vào mảng
-            Them_phan_tu_vao_mang();
+            //Them_phan_tu_vao_mang();
 
-           
+
 
 
 
@@ -103,7 +104,70 @@ namespace Codegym_bai_tap
             Console.ReadKey();
         }
 
+        #region Các hàm bài tập
 
+        static void Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu()
+        {
+
+            const int x = 3, y = 5; //Kích thước bảng
+            int so_nho_nhat, so_lon_nhat; //Gía trị lớn nhất và nhỏ nhất của bảng
+            int X_max = 0, Y_max = 0, X_min = 0, Y_min = 03;
+           
+            int[,] mang_chu_so = new int[x, y];
+            //Nhập giá trị cho mảng
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write(" Nhap gia tri cho vi tri: [" + i + "," + j + "] : ");
+                    mang_chu_so[i, j] = int.Parse(Console.ReadLine().ToString());
+                }
+            }
+
+
+            so_nho_nhat = mang_chu_so[0, 0];
+            so_lon_nhat = mang_chu_so[0, 0];
+
+
+            // Tìm vị trí lớn nhất và nhỏ nhất
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    if (mang_chu_so[i, j] > so_lon_nhat)
+                    {
+                        so_lon_nhat = mang_chu_so[i, j];
+                        X_max = i;
+                        Y_max = j;
+                    }
+
+                    if (mang_chu_so[i, j] < so_nho_nhat)
+                    {
+                        so_nho_nhat = mang_chu_so[i, j];
+                        X_min = i;
+                        Y_min = j;
+                    }
+                }
+            }
+
+
+            // Hiện thị mảng ra màn hình
+            for (int i = 0; i < x; i++)
+            {
+                for (int j = 0; j < y; j++)
+                {
+                    Console.Write(mang_chu_so[i, j] + ", ");
+                }
+                Console.WriteLine();
+            }
+
+            //Hiện thị số lớn nhất
+            Console.WriteLine();
+            Console.WriteLine(X_min);
+            Console.WriteLine("So lon nhat tai vi tri [ " + X_max + ", "+ Y_max + "] la : " + so_lon_nhat);
+            Console.WriteLine("So nho nhat tai vi tri [ " + X_min + ", " + Y_min + "] la : " + so_nho_nhat);
+
+        }
         static void Them_phan_tu_vao_mang()
         {
             int[] mang_cac_so = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -696,10 +760,10 @@ namespace Codegym_bai_tap
 
 
 
+        #endregion
 
 
 
-        
 
 
 
