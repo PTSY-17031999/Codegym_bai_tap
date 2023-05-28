@@ -10,10 +10,25 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
+
+
+
+
+
+
+
+            /*************************/
+            // Thêm phần tử vào mảng
+            Them_phan_tu_vao_mang();
+
+           
+
+
+
             /*************************/
             // Tìm giá trị lớn nhất trong mảng
             //tim_gia_tri_lon_nhat_trong_mang();
-           
+
 
 
 
@@ -89,7 +104,62 @@ namespace Codegym_bai_tap
         }
 
 
+        static void Them_phan_tu_vao_mang()
+        {
+            int[] mang_cac_so = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
+            // Add phần tử vào mảng
+            for (int i = 0; i < 5; i++)
+            {
+                Console.Write("Nhap Phan tu so " + (i + 1) + " : ");
+                mang_cac_so[i] = int.Parse(Console.ReadLine().ToString());
+            }
+
+            // Hiện thị các phần tử của mảng vừa nhấp
+            for (int i = 0; i < mang_cac_so.Length; i++)
+            {
+                if (i == 0) Console.Write("Mang cu gom cac so: ");
+                Console.Write(mang_cac_so[i] + ", ");
+                if (i == mang_cac_so.Length - 1) Console.WriteLine();
+            }
+
+
+
+            // Nhập vị trí muốn chèn
+            int Vi_tri_chen;
+            do
+            {
+                Console.Write("Nhap vi muon chen: ");
+                Vi_tri_chen = int.Parse(Console.ReadLine().ToString());
+            } while (Vi_tri_chen > mang_cac_so.Length - 1);
+
+            // Nhập số muốn chèn
+            int So_muon_chen;
+            Console.Write("Nhap so muon chen: ");
+            So_muon_chen = int.Parse(Console.ReadLine().ToString());
+
+
+            // Code để chèn thêm phần tử vào mảng
+            for (int i = mang_cac_so.Length; i >= Vi_tri_chen - 1; i--)
+            {
+                if (i == Vi_tri_chen - 1)
+                {
+                    mang_cac_so[Vi_tri_chen - 1] = So_muon_chen;
+                    continue;
+                }
+                mang_cac_so[i - 1] = mang_cac_so[i - 2];
+            }
+
+            // Hiện thị mảng mới
+            for (int i = 0; i < mang_cac_so.Length; i++)
+            {
+                if (i == 0) Console.Write("Mang moi gom cac so: ");
+                Console.Write(mang_cac_so[i] + ", ");
+                if (i == mang_cac_so.Length - 1) Console.WriteLine();
+            }
+
+
+        }
         static void tim_gia_tri_lon_nhat_trong_mang()
         {
             int so_phan_tu;
