@@ -18,11 +18,6 @@ namespace Codegym_bai_tap
             //Mảng hai chiều – tạo bản đồ trò chơi MineSweeper
             tao_ban_do_game_MineSweeper();
 
-            #region
-
-            #endregion
-
-
             /**************************/
             //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
             //tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu();
