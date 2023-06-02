@@ -10,111 +10,160 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
-            /**************************/
-            //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
-            tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu();
-            
+
+            #region Bài tập về mảng
+
+
+            /***************************/
+            //Mảng hai chiều – tạo bản đồ trò chơi MineSweeper
+
+
+        #region
+     
+        // Kích thước bản đồ
+        int Chieu_dai_ban_do = 4, Chieu_rong_ban_do = 4;
+
+        // Mảng bản đồ chưa chuyển đổi
+        string [,] ban_do_1 = new string[,] {
+        { "*" , ".", ".", "." },
+        { "*" , ".", ".", "." },
+        { "*" , ".", ".", "." },
+        { "*" , ".", ".", "." }
+                                            };
+
+        //Hiện thị mảng củ
+        for (int i = 0; i < Chieu_dai_ban_do; i++)
+        {
+            for (int j = 0; j < Chieu_rong_ban_do; j++)
+            {
+                if (ban_do_1[i, j].Equals("*"))
+                {
+                    Console.Write("*");
+                } else Console.Write(".");
+            }
+            Console.WriteLine();
+        }
+        // Taọ mảng tọa độ mã láng giềng và vị trí đang kiểm tra
+        int x = 0, y = 0; // Tọa độ đang kiểm tra
+        
+
+            //Tái cấu trúc lại mảng
+            string [,] ban_do_2 = new string[4,4] ;
+        for( ; x < Chieu_dai_ban_do; x++)
+        {
+            for(; y < Chieu_rong_ban_do; y++)
+            {
+                    if (ban_do_1[x, y].Equals("*")) { ban_do_2[x - 1, y - 1] = "*"; }
+                    else
+                    {
+                        int[,] Toa_do_cua_cac_lang_gieng =
+                    {
+                        {x - 1, y - 1 },
+                        {x - 1, y     },
+                        {x - 1, y + 1 },
+                        {x    , y - 1 },
+                        {x    , y + 1 },
+                        {x + 1, y + 1 },
+                        {x + 1, y     },
+                        {x + 1, y + 1 }
+                    };
+                        for(int i; i < Toa_do_cua_cac_lang_gieng.GetLength(0); i++)
+                        {
+                            int
+                        }
+
+                    }
+            }
+        }
+
+        #endregion
+
+
+        /**************************/
+        //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
+        //tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu();
+
+        /**************************/
+        //Tìm phần tử lớn nhất trong mảng hai chiều
+        //Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
+
+        /*************************/
+        // Thêm phần tử vào mảng
+        //Them_phan_tu_vao_mang();
+
+        /*************************/
+        // Tìm giá trị lớn nhất trong mảng
+        //tim_gia_tri_lon_nhat_trong_mang();
+
+        /*************************/
+        // Tìm giá trị trong mảng
+        // tim_gia_tri_tron_mang();
+
+        /*************************/
+        // Tính tổng phần tử trong mảng
+        //tinh_tong_cac_so_trong_mang();
+
+        #endregion
+
+        #region Bài tập câu lệnh lập 
+        /*************************/
+        // Xây dựng ứng dụng menu và hiện thị các loại hình
+        //thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh();
+
+        /*************************/
+        //Tìm số nguyên tố
+        //tim_so_nguyen_to();
+        #endregion
+
+        #region Bài tập Câu điều kiện
+        /************************/
+        // Bài tập ĐỌC SỐ THANH CHỮ
+        //Bai_tap_chuyen_so_thanh_chu();
+
+
+        /************************/
+        // Bài tập tính chỉ số căn nặng BMI
+        //bai_tap_tinh_chi_so_BMI();
+
+
+        /************************/
+        // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
+        //bai_tap_giai_phuong_trinh_bac_2();
+        #endregion
+
+        #region bài tập C# cơ bản
+        /************************/
+        //Tính số ngày tới sinh nhật
+        // bai_tap_buoi_2();
+
+        /*************************/
+        //Bài tập xây dựng ứng dụng tiền tệ 
+        //ung_dung_chuyen_doi_tien_te();
+
+        /*************************/
+        //Hiện thị lời chào
+        //Bai_tap_buoi_1c();
+
+        /*************************/
+        //Sử dụng toán tử
+        //Bai_tap_buoi_1b();
+
+        /************************/
+        //Hiện thị thời gian hệ thống
+        //Bai_tap_buoi_1a();
+        #endregion
 
 
 
 
-            /**************************/
-            //Tìm phần tử lớn nhất trong mảng hai chiều
-            //Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
 
-
-
-
-            /*************************/
-            // Thêm phần tử vào mảng
-            //Them_phan_tu_vao_mang();
-
-
-
-
-
-            /*************************/
-            // Tìm giá trị lớn nhất trong mảng
-            //tim_gia_tri_lon_nhat_trong_mang();
-
-
-
-
-
-
-            /*************************/
-            // Tìm giá trị trong mảng
-            // tim_gia_tri_tron_mang();
-
-
-
-            /*************************/
-            // Tính tổng phần tử trong mảng
-            //tinh_tong_cac_so_trong_mang();
-
-
-
-            /*************************/
-            // Xây dựng ứng dụng menu và hiện thị các loại hình
-            //thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh();
-
-
-            /*************************/
-            //Tìm số nguyên tố
-            //tim_so_nguyen_to();
-
-
-            /************************/
-            // Bài tập ĐỌC SỐ THANH CHỮ
-            //Bai_tap_chuyen_so_thanh_chu();
-
-
-            /************************/
-            // Bài tập tính chỉ số căn nặng BMI
-            //bai_tap_tinh_chi_so_BMI();
-
-
-            /************************/
-            // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
-            //bai_tap_giai_phuong_trinh_bac_2();
-
-
-            /************************/
-            //Tính số ngày tới sinh nhật
-            // bai_tap_buoi_2();
-
-
-            /*************************/
-            //Bài tập xây dựng ứng dụng tiền tệ 
-            //ung_dung_chuyen_doi_tien_te();
-
-
-            /*************************/
-            //Hiện thị lời chào
-            //Bai_tap_buoi_1c();
-
-
-            /*************************/
-            //Sử dụng toán tử
-            //Bai_tap_buoi_1b();
-
-
-            /************************/
-            //Hiện thị thời gian hệ thống
-            //Bai_tap_buoi_1a();
-
-
-
-
-
-
-            Console.ReadKey();
+        Console.ReadKey();
         }
 
         #region Các hàm bài tập
 
 
-
+ /***********************************************************************************************************************************************************************/
         static void tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu() {
 
             const int x = 3; //Kích thước bảng
@@ -153,7 +202,7 @@ namespace Codegym_bai_tap
 
 
 
-
+ /***********************************************************************************************************************************************************************/
         static void Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu()
         {
 
@@ -216,6 +265,9 @@ namespace Codegym_bai_tap
             Console.WriteLine("So nho nhat tai vi tri [ " + X_min + ", " + Y_min + "] la : " + so_nho_nhat);
 
         }
+
+
+ /***********************************************************************************************************************************************************************/
         static void Them_phan_tu_vao_mang()
         {
             int[] mang_cac_so = new int[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
@@ -272,6 +324,9 @@ namespace Codegym_bai_tap
 
 
         }
+
+
+ /***********************************************************************************************************************************************************************/
         static void tim_gia_tri_lon_nhat_trong_mang()
         {
             int so_phan_tu;
@@ -298,6 +353,9 @@ namespace Codegym_bai_tap
             Console.WriteLine("Gia tri lon nhat cua mang là: " + So_lon_nhat);
 
         }
+
+
+ /***********************************************************************************************************************************************************************/
         static void tim_gia_tri_tron_mang()
         {
             // Nhập giá trị cho mảng
@@ -331,7 +389,8 @@ namespace Codegym_bai_tap
 
 
 
-       static void tinh_tong_cac_so_trong_mang()
+/***********************************************************************************************************************************************************************/
+        static void tinh_tong_cac_so_trong_mang()
         {
             Console.WriteLine("Nhap so phan tu trong mang: ");
             int so_phan_tu = int.Parse(Console.ReadLine().ToString());
@@ -351,6 +410,9 @@ namespace Codegym_bai_tap
         }
 
 
+
+
+ /***********************************************************************************************************************************************************************/
         static void thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh()
         {
             String Input_lua_chon;
@@ -496,6 +558,8 @@ namespace Codegym_bai_tap
 
 
 
+
+/***********************************************************************************************************************************************************************/
         static void tim_so_nguyen_to()
         {
             string Input_so;
@@ -529,6 +593,10 @@ namespace Codegym_bai_tap
             Console.WriteLine(so_can_kiem_tra + " La so nguyen to");
         }
 
+
+
+
+/***********************************************************************************************************************************************************************/
         static void Bai_tap_chuyen_so_thanh_chu()
         {
 
@@ -625,6 +693,9 @@ namespace Codegym_bai_tap
 
 
 
+
+
+/***********************************************************************************************************************************************************************/
         static void bai_tap_tinh_chi_so_BMI()
         {
             double Can_nang = 0, Chieu_cao = 0, bmi = 0;
@@ -666,7 +737,10 @@ namespace Codegym_bai_tap
         }
 
 
-     static void bai_tap_giai_phuong_trinh_bac_2()
+
+
+/***********************************************************************************************************************************************************************/
+        static void bai_tap_giai_phuong_trinh_bac_2()
         {
             Console.WriteLine("********** Giai phuong trinh bac 2 Ax^2 + Bx + C = 0 **********");
             double a_3a = 0, b_3a = 0, c_3a = 0;
@@ -713,7 +787,9 @@ namespace Codegym_bai_tap
         }
 
 
-    static void bai_tap_buoi_2()
+
+/***********************************************************************************************************************************************************************/
+        static void bai_tap_buoi_2()
         {
             Console.OutputEncoding = System.Text.Encoding.UTF8;
 
@@ -738,7 +814,11 @@ namespace Codegym_bai_tap
             
         }
 
-    static void ung_dung_chuyen_doi_tien_te()
+
+
+
+/***********************************************************************************************************************************************************************/
+        static void ung_dung_chuyen_doi_tien_te()
         {
             int ti_gia = 23000;
             string Input_choose;
@@ -773,6 +853,10 @@ namespace Codegym_bai_tap
         }
 
 
+
+
+
+/***********************************************************************************************************************************************************************/
         static void Bai_tap_buoi_1c()
         { 
             Console.WriteLine("Nhập tên của bạn: ");
@@ -780,7 +864,11 @@ namespace Codegym_bai_tap
             Console.WriteLine("Chào bạn: " + ten_1c);
         }
 
-    static void Bai_tap_buoi_1b()
+
+
+
+/***********************************************************************************************************************************************************************/
+        static void Bai_tap_buoi_1b()
         {
             float width;
             float height;
@@ -794,7 +882,10 @@ namespace Codegym_bai_tap
 
         }
 
-    static void Bai_tap_buoi_1a()
+
+
+/***********************************************************************************************************************************************************************/
+        static void Bai_tap_buoi_1a()
         {
             DateTime Thoi_gian_hien_tai_1a = DateTime.Now;
             Console.OutputEncoding = Encoding.UTF8;
