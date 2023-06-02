@@ -16,48 +16,142 @@ namespace Codegym_bai_tap
 
             /***************************/
             //Mảng hai chiều – tạo bản đồ trò chơi MineSweeper
+            tao_ban_do_game_MineSweeper();
+
+            #region
+
+            #endregion
 
 
-        #region
-     
+            /**************************/
+            //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
+            //tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu();
+
+            /**************************/
+            //Tìm phần tử lớn nhất trong mảng hai chiều
+            //Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
+
+            /*************************/
+            // Thêm phần tử vào mảng
+            //Them_phan_tu_vao_mang();
+
+            /*************************/
+            // Tìm giá trị lớn nhất trong mảng
+            //tim_gia_tri_lon_nhat_trong_mang();
+
+            /*************************/
+            // Tìm giá trị trong mảng
+            // tim_gia_tri_tron_mang();
+
+            /*************************/
+            // Tính tổng phần tử trong mảng
+            //tinh_tong_cac_so_trong_mang();
+
+            #endregion
+
+            #region Bài tập câu lệnh lập 
+            /*************************/
+            // Xây dựng ứng dụng menu và hiện thị các loại hình
+            //thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh();
+
+            /*************************/
+            //Tìm số nguyên tố
+            //tim_so_nguyen_to();
+            #endregion
+
+            #region Bài tập Câu điều kiện
+            /************************/
+            // Bài tập ĐỌC SỐ THANH CHỮ
+            //Bai_tap_chuyen_so_thanh_chu();
+
+
+            /************************/
+            // Bài tập tính chỉ số căn nặng BMI
+            //bai_tap_tinh_chi_so_BMI();
+
+
+            /************************/
+            // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
+            //bai_tap_giai_phuong_trinh_bac_2();
+            #endregion
+
+            #region bài tập C# cơ bản
+            /************************/
+            //Tính số ngày tới sinh nhật
+            // bai_tap_buoi_2();
+
+            /*************************/
+            //Bài tập xây dựng ứng dụng tiền tệ 
+            //ung_dung_chuyen_doi_tien_te();
+
+            /*************************/
+            //Hiện thị lời chào
+            //Bai_tap_buoi_1c();
+
+            /*************************/
+            //Sử dụng toán tử
+            //Bai_tap_buoi_1b();
+
+            /************************/
+            //Hiện thị thời gian hệ thống
+            //Bai_tap_buoi_1a();
+            #endregion
+
+
+
+
+
+            Console.ReadKey();
+        }
+
+        #region Các hàm bài tập
+/*******************************************************************************************************************************************************/
+       static void tao_ban_do_game_MineSweeper(){
+
+
         // Kích thước bản đồ
-        int Chieu_dai_ban_do = 4, Chieu_rong_ban_do = 4;
+        int Chieu_dai_ban_do = 6, Chieu_rong_ban_do = 6;
 
         // Mảng bản đồ chưa chuyển đổi
-        string [,] ban_do_1 = new string[,] {
-        { "*" , ".", ".", "." },
-        { "*" , ".", ".", "." },
-        { "*" , ".", ".", "." },
-        { "*" , ".", ".", "." }
+        string[,] ban_do_1 = new string[,]{
+        { "*" , ".", "*", ".", "*", "." },
+        { "*" , ".", ".", ".", "*", "." },
+        { "*" , ".", ".", "*", "*", "." },
+        { "*" , ".", ".", ".", "*", "." },
+        { "*" , ".", ".", ".", ".", "." },
+        { "*" , "*", ".", ".", "*", "." },
                                             };
 
         //Hiện thị mảng củ
-        for (int i = 0; i < Chieu_dai_ban_do; i++)
+        for (int i = 0; i<Chieu_dai_ban_do; i++)
         {
-            for (int j = 0; j < Chieu_rong_ban_do; j++)
+            for (int j = 0; j<Chieu_rong_ban_do; j++)
             {
                 if (ban_do_1[i, j].Equals("*"))
                 {
                     Console.Write("*");
                 } else Console.Write(".");
             }
-            Console.WriteLine();
+Console.WriteLine();
         }
         // Taọ mảng tọa độ mã láng giềng và vị trí đang kiểm tra
-        int x = 0, y = 0; // Tọa độ đang kiểm tra
-        
+       // int x = 0, y = 0; // Tọa độ đang kiểm tra
+
 
             //Tái cấu trúc lại mảng
-            string [,] ban_do_2 = new string[4,4] ;
-        for( ; x < Chieu_dai_ban_do; x++)
+            
+            int dem;
+string[,] ban_do_2 = new string[Chieu_dai_ban_do, Chieu_rong_ban_do];
+for (int x = 0; x < Chieu_dai_ban_do; x++)
+{
+    for (int y = 0; y < Chieu_rong_ban_do; y++)
+    {
+        if (ban_do_1[x, y].Equals("*")) { ban_do_2[x, y] = "*"; }
+        else
         {
-            for(; y < Chieu_rong_ban_do; y++)
-            {
-                    if (ban_do_1[x, y].Equals("*")) { ban_do_2[x - 1, y - 1] = "*"; }
-                    else
-                    {
-                        int[,] Toa_do_cua_cac_lang_gieng =
-                    {
+            // Khai báo tọa độ mảng láng giềng
+            int[,] Toa_do_cua_cac_lang_gieng =
+                   {
                         {x - 1, y - 1 },
                         {x - 1, y     },
                         {x - 1, y + 1 },
@@ -67,103 +161,43 @@ namespace Codegym_bai_tap
                         {x + 1, y     },
                         {x + 1, y + 1 }
                     };
-                        for(int i; i < Toa_do_cua_cac_lang_gieng.GetLength(0); i++)
-                        {
-                            int
-                        }
 
-                    }
+            dem = 0;
+            for (int i = 0; i < Toa_do_cua_cac_lang_gieng.GetLength(0); i++)
+            {
+                int X_kiem_tra = Toa_do_cua_cac_lang_gieng[i, 0];
+                int Y_kiem_tra = Toa_do_cua_cac_lang_gieng[i, 1];
+                if (X_kiem_tra < 0 || X_kiem_tra >= Chieu_dai_ban_do ||
+                   Y_kiem_tra < 0 || Y_kiem_tra >= Chieu_rong_ban_do) { continue; }
+                if (ban_do_1[X_kiem_tra, Y_kiem_tra].Equals("*"))
+                {
+                    dem++;
+                }
             }
+            ban_do_2[x, y] = dem.ToString();
+            dem = 0;
+
+
         }
-
-        #endregion
-
-
-        /**************************/
-        //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
-        //tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu();
-
-        /**************************/
-        //Tìm phần tử lớn nhất trong mảng hai chiều
-        //Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu();
-
-        /*************************/
-        // Thêm phần tử vào mảng
-        //Them_phan_tu_vao_mang();
-
-        /*************************/
-        // Tìm giá trị lớn nhất trong mảng
-        //tim_gia_tri_lon_nhat_trong_mang();
-
-        /*************************/
-        // Tìm giá trị trong mảng
-        // tim_gia_tri_tron_mang();
-
-        /*************************/
-        // Tính tổng phần tử trong mảng
-        //tinh_tong_cac_so_trong_mang();
-
-        #endregion
-
-        #region Bài tập câu lệnh lập 
-        /*************************/
-        // Xây dựng ứng dụng menu và hiện thị các loại hình
-        //thiet_ke_ung_dung_menu_va_hien_thi_cac_loai_hinh();
-
-        /*************************/
-        //Tìm số nguyên tố
-        //tim_so_nguyen_to();
-        #endregion
-
-        #region Bài tập Câu điều kiện
-        /************************/
-        // Bài tập ĐỌC SỐ THANH CHỮ
-        //Bai_tap_chuyen_so_thanh_chu();
-
-
-        /************************/
-        // Bài tập tính chỉ số căn nặng BMI
-        //bai_tap_tinh_chi_so_BMI();
-
-
-        /************************/
-        // Bài tập buổi 3a Giải phương trình bặc 2 Ax^2 + Bx + C = 0 ( năng cao)
-        //bai_tap_giai_phuong_trinh_bac_2();
-        #endregion
-
-        #region bài tập C# cơ bản
-        /************************/
-        //Tính số ngày tới sinh nhật
-        // bai_tap_buoi_2();
-
-        /*************************/
-        //Bài tập xây dựng ứng dụng tiền tệ 
-        //ung_dung_chuyen_doi_tien_te();
-
-        /*************************/
-        //Hiện thị lời chào
-        //Bai_tap_buoi_1c();
-
-        /*************************/
-        //Sử dụng toán tử
-        //Bai_tap_buoi_1b();
-
-        /************************/
-        //Hiện thị thời gian hệ thống
-        //Bai_tap_buoi_1a();
-        #endregion
+    }
+}
 
 
 
+Console.WriteLine("----------------------------------------------------");
+//Hiện thị mảng mới
+for (int i = 0; i < Chieu_dai_ban_do; i++)
+{
+    for (int j = 0; j < Chieu_rong_ban_do; j++)
+    {
+        Console.Write(ban_do_2[i, j]);
+    }
+    Console.WriteLine();
+}
+}
 
 
-        Console.ReadKey();
-        }
-
-        #region Các hàm bài tập
-
-
- /***********************************************************************************************************************************************************************/
+/***********************************************************************************************************************************************************************/
         static void tinh_tong_duong_cheo_hinh_vuong_cua_mang_2_chieu() {
 
             const int x = 3; //Kích thước bảng
@@ -193,12 +227,6 @@ namespace Codegym_bai_tap
                Console.WriteLine("Tong duong cheo : " + tong_duong_cheo);
           
               }
-
-
-
-
-
-
 
 
 
@@ -355,7 +383,8 @@ namespace Codegym_bai_tap
         }
 
 
- /***********************************************************************************************************************************************************************/
+
+/***********************************************************************************************************************************************************************/
         static void tim_gia_tri_tron_mang()
         {
             // Nhập giá trị cho mảng
