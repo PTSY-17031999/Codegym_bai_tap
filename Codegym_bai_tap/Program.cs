@@ -10,13 +10,20 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
+            #region Bài tập về hàm
+            /***************************/
+            //[Thực hành] Chương trình chuyển đổi nhiệt độ
+            // celsius = (5.0 / 9) * (fahrenheit - 32)
+            chuong_trinh_chuyen_doi_nhiet_do();
+            #endregion
+
 
             #region Bài tập về mảng
 
 
             /***************************/
             //Mảng hai chiều – tạo bản đồ trò chơi MineSweeper
-            tao_ban_do_game_MineSweeper();
+            //tao_ban_do_game_MineSweeper();
 
             /**************************/
             //Mảng hai chiều – tính tổng các số ở đường chéo chính của ma trận vuông
@@ -101,7 +108,55 @@ namespace Codegym_bai_tap
 
         #region Các hàm bài tập
 /*******************************************************************************************************************************************************/
-       static void tao_ban_do_game_MineSweeper(){
+
+        static void chuong_trinh_chuyen_doi_nhiet_do()
+        {
+            int Lua_chon;
+            double Fahrenheit, Celsius; //Biến lưu độ C và độ F
+            do
+            {
+                Console.WriteLine(" Hay nhap lua chon cu ban vao ung dung nhiet do");
+                Console.WriteLine("                    1 de chuyen doi nhiet do tu C -> F");
+                Console.WriteLine("                    2 de chuyen doi nhiet do tu F -> C");
+                Console.WriteLine("                    0 de thoat ung dung");
+                Lua_chon = int.Parse(Console.ReadLine());
+                switch (Lua_chon)
+                {
+                    case 0:
+                        Environment.Exit(0);
+                        break;
+                    case 1:
+                        Console.WriteLine("Nhap nhiet do C: ");
+                        Celsius = Double.Parse(Console.ReadLine());
+                        Console.WriteLine(Celsius + " C = " + C_to_F(Celsius) + " F");
+                        break;
+                    case 2:
+                        Console.WriteLine("Nhap nhiet do F: ");
+                        Fahrenheit = Double.Parse(Console.ReadLine());
+                        Console.WriteLine(Fahrenheit + " F = " + F_to_C(Fahrenheit) + " C");
+                        break;
+                }
+
+
+            } while (Lua_chon < 0 || Lua_chon > 2);
+
+        }
+        static double C_to_F(double Celsius)
+        {
+            double Fahrenheit = (9.0 / 5) * Celsius + 32;
+            return Fahrenheit;
+        }
+        static double F_to_C(double Fahrenheit)
+        {
+            double Celsius = Fahrenheit / (9.0 / 5) - 32;
+            return Celsius;
+        }
+
+
+
+
+        /*******************************************************************************************************************************************************/
+        static void tao_ban_do_game_MineSweeper(){
 
 
         // Kích thước bản đồ
