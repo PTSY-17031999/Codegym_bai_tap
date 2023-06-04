@@ -12,9 +12,13 @@ namespace Codegym_bai_tap
         {
             #region Bài tập về hàm
             /***************************/
+            //[Thực hành] Tìm giá trị nhỏ nhất trong mảng sử dụng phương thức
+            tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc();
+
+            /***************************/
             //[Thực hành] Chương trình chuyển đổi nhiệt độ
             // celsius = (5.0 / 9) * (fahrenheit - 32)
-            chuong_trinh_chuyen_doi_nhiet_do();
+            //chuong_trinh_chuyen_doi_nhiet_do();
             #endregion
 
 
@@ -107,8 +111,36 @@ namespace Codegym_bai_tap
         }
 
         #region Các hàm bài tập
-/*******************************************************************************************************************************************************/
 
+        /*******************************************************************************************************************************************************/
+        static void tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc() {
+            int[] mang_con_so = { 5, 6, 8, 2, 45, 15, 12, 1, 54, 62, 79, 85, 45 };
+        int Vi_tri;
+        Console.WriteLine("So nho nhat trong mang la: " + mang_con_so[Gia_tri_nho_nhat_cua_mang(mang_con_so)]);
+
+                    }
+        static int Gia_tri_nho_nhat_cua_mang(int[] mang_con_so)
+        {
+
+            int min = mang_con_so[0];
+            int Vi_tr_so_nho_nhat = 0;
+
+            for (int i = 1; i < mang_con_so.Length; i++)
+            {
+                if (mang_con_so[i] < min)
+                {
+                    min = mang_con_so[i];
+                    Vi_tr_so_nho_nhat = i;
+                }
+            }
+
+            return Vi_tr_so_nho_nhat;
+        }
+
+
+
+/*******************************************************************************************************************************************************/
+        #region chuong_trinh_chuyen_doi_nhiet_do
         static void chuong_trinh_chuyen_doi_nhiet_do()
         {
             int Lua_chon;
@@ -153,9 +185,9 @@ namespace Codegym_bai_tap
         }
 
 
+        #endregion
 
-
-        /*******************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************/
         static void tao_ban_do_game_MineSweeper(){
 
 
