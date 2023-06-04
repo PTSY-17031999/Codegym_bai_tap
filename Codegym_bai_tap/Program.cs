@@ -11,9 +11,15 @@ namespace Codegym_bai_tap
         static void Main(string[] args)
         {
             #region Bài tập về hàm
+
+            /***************************/
+            //[Bài tập] Viết phương thức xoá phần tử khỏi mảng
+            viet_phuong_thuc_xoa_phan_tu_khoi_mang();
+
+
             /***************************/
             //[Thực hành] Tìm giá trị nhỏ nhất trong mảng sử dụng phương thức
-            tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc();
+            //tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc();
 
             /***************************/
             //[Thực hành] Chương trình chuyển đổi nhiệt độ
@@ -113,8 +119,62 @@ namespace Codegym_bai_tap
         #region Các hàm bài tập
 
         /*******************************************************************************************************************************************************/
+        #region viet_phuong_thuc_xoa_phan_tu_khoi_mang
+
+        static void viet_phuong_thuc_xoa_phan_tu_khoi_mang() {
+            int[] mang_cac_con_so = { 0, 1, 25, 5, 8, 9, 45, 20, 35 };
+            Console.Write("Mang cu : ");
+            for (int i = 0; i < mang_cac_con_so.Length; i++)
+            {
+                Console.Write(mang_cac_con_so[i] + ", ");
+            }
+            Console.WriteLine();
+            Console.Write("Nhap ky tu muon xoa :");
+            int ky_tu_can_xoa = int.Parse(Console.ReadLine());
+            int[] _Mang_moi = ham_xoa_ky_tu_trong_mang(mang_cac_con_so, ky_tu_can_xoa);
+            // Hiện thị mảng mới
+            for (int i = 0; i < _Mang_moi.Length; i++)
+            {
+                Console.Write(_Mang_moi[i] + ", ");
+            }
+        }
+        static int[] ham_xoa_ky_tu_trong_mang(int [] Mang_can_xoa_ky_tu, int ky_tu_muon_xoa)
+        {
+            int [] _mang_moi = new int[Mang_can_xoa_ky_tu.Length - 1];
+            bool _nho = false;
+            for(int i = 0; i < Mang_can_xoa_ky_tu.Length- 1; i++)
+            {
+                
+                if ((Mang_can_xoa_ky_tu[i].Equals(ky_tu_muon_xoa) || _nho != false) && i < Mang_can_xoa_ky_tu.Length - 1)
+                {
+                    _mang_moi[i] = Mang_can_xoa_ky_tu[i + 1];
+                    _nho = true;
+                }
+                else
+                {
+                    _mang_moi[i] = Mang_can_xoa_ky_tu[i];
+                }
+                
+            }
+            if (_nho == false)
+            {
+                Console.Write("Ky tu ban muon xoa khong ton tai trong mang, mang cu van giu nguyen : ");
+                return Mang_can_xoa_ky_tu;
+            }
+            else
+            {
+                Console.Write("Mang moi la : ");
+                return _mang_moi;
+            }
+        }
+        #endregion
+
+
+        /*******************************************************************************************************************************************************/
+
+        #region tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc()
         static void tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc() {
-            int[] mang_con_so = { 5, 6, 8, 2, 45, 15, 12, 1, 54, 62, 79, 85, 45 };
+        int[] mang_con_so = { 5, 6, 8, 2, 45, 15, 12, 1, 54, 62, 79, 85, 45 };
         int Vi_tri;
         Console.WriteLine("So nho nhat trong mang la: " + mang_con_so[Gia_tri_nho_nhat_cua_mang(mang_con_so)]);
 
@@ -137,7 +197,7 @@ namespace Codegym_bai_tap
             return Vi_tr_so_nho_nhat;
         }
 
-
+        #endregion
 
 /*******************************************************************************************************************************************************/
         #region chuong_trinh_chuyen_doi_nhiet_do
