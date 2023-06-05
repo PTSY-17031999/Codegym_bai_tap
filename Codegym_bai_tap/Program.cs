@@ -10,11 +10,17 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
+           
+
             #region Bài tập về hàm
 
             /***************************/
+            //[Bài tập] Viết phương thức đếm số lần xuất hiện của ký tự trong chuỗi
+             viet_phuong_thuc_dem_so_lan_xuat_hien_cua_ky_tu();
+
+            /***************************/
             //[Bài tập] Viết phương thức xoá phần tử khỏi mảng
-            viet_phuong_thuc_xoa_phan_tu_khoi_mang();
+            // viet_phuong_thuc_xoa_phan_tu_khoi_mang();
 
 
             /***************************/
@@ -118,7 +124,45 @@ namespace Codegym_bai_tap
 
         #region Các hàm bài tập
 
-        /*******************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************/
+
+        #region viet_phuong_thuc_dem_so_lan_xuat_hien_cua_ky_tu
+
+        static void viet_phuong_thuc_dem_so_lan_xuat_hien_cua_ky_tu()
+        {
+            
+            Console.Write("Nhap chuoi ky tu : ");
+            string Chuoi_ky_tu = Console.ReadLine();
+            string _Chuoi_ky_tu_kiem_tra = "";
+            do
+            {
+                Console.Write("Nhap chuoi ky tu muon kiem tra : ");
+                _Chuoi_ky_tu_kiem_tra = Console.ReadLine();
+            } while (_Chuoi_ky_tu_kiem_tra.Length < 2 && _Chuoi_ky_tu_kiem_tra == "");
+            Console.WriteLine("So lan_xuat hien ky tu '" + _Chuoi_ky_tu_kiem_tra + "' la : " + ham_dem_so_lan_xuat_hien(Chuoi_ky_tu, _Chuoi_ky_tu_kiem_tra));
+        }
+        static int ham_dem_so_lan_xuat_hien(string _chuoi_ky_tu, string _chuoi_ky_tu_kiem_tra)
+        {
+            
+            int _dem = 0;
+            for (int i = 0; i < _chuoi_ky_tu.Length - 1; i++)
+            {
+               
+                
+                if (_chuoi_ky_tu[i].ToString().Equals(_chuoi_ky_tu_kiem_tra)) {
+                    _dem ++;
+                }
+               
+            }
+
+            return _dem;
+
+        }
+        #endregion
+
+
+/*******************************************************************************************************************************************************/
+
         #region viet_phuong_thuc_xoa_phan_tu_khoi_mang
 
         static void viet_phuong_thuc_xoa_phan_tu_khoi_mang() {
@@ -170,7 +214,7 @@ namespace Codegym_bai_tap
         #endregion
 
 
-        /*******************************************************************************************************************************************************/
+/*******************************************************************************************************************************************************/
 
         #region tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc()
         static void tim_gia_tri_nho_nhat_trong_mang_su_dung_phuong_thuc() {
@@ -198,6 +242,7 @@ namespace Codegym_bai_tap
         }
 
         #endregion
+
 
 /*******************************************************************************************************************************************************/
         #region chuong_trinh_chuyen_doi_nhiet_do
@@ -246,6 +291,7 @@ namespace Codegym_bai_tap
 
 
         #endregion
+
 
 /*******************************************************************************************************************************************************/
         static void tao_ban_do_game_MineSweeper(){
@@ -371,7 +417,6 @@ for (int i = 0; i < Chieu_dai_ban_do; i++)
               }
 
 
-
  /***********************************************************************************************************************************************************************/
         static void Tim_gia_tri_nho_va_lon_nhat_trong_mang_2_chieu()
         {
@@ -435,7 +480,6 @@ for (int i = 0; i < Chieu_dai_ban_do; i++)
             Console.WriteLine("So nho nhat tai vi tri [ " + X_min + ", " + Y_min + "] la : " + so_nho_nhat);
 
         }
-
 
  /***********************************************************************************************************************************************************************/
         static void Them_phan_tu_vao_mang()
@@ -525,7 +569,6 @@ for (int i = 0; i < Chieu_dai_ban_do; i++)
         }
 
 
-
 /***********************************************************************************************************************************************************************/
         static void tim_gia_tri_tron_mang()
         {
@@ -558,8 +601,6 @@ for (int i = 0; i < Chieu_dai_ban_do; i++)
         }
 
 
-
-
 /***********************************************************************************************************************************************************************/
         static void tinh_tong_cac_so_trong_mang()
         {
@@ -579,8 +620,6 @@ for (int i = 0; i < Chieu_dai_ban_do; i++)
             }
             Console.WriteLine("Tong cac phan tu trong mang là :  " + tong_mang);
         }
-
-
 
 
  /***********************************************************************************************************************************************************************/
@@ -726,8 +765,6 @@ for (int i = 0; i < Chieu_dai_ban_do; i++)
             }
 
         }
-
-
 
 
 /***********************************************************************************************************************************************************************/
