@@ -12,10 +12,70 @@ namespace Codegym_bai_tap
         static void Main(string[] args)
         {
             #region Bài tập về FILE
+           // string sourceFilePath = @"C:\MyData\TestFile.txt"; //File nguồn
+           // string destinationFilePath = @"C:\temp\Data.txt"; //File đích
+           // bool overWrite = true; //Có ghi đè không
+
+           // File.Copy(sourceFilePath, destinationFilePath, overWrite);
+
+            Console.WriteLine("Nhap duong dan file can copy: ");
+            string Duong_dan_gui = Console.ReadLine();
+            Console.WriteLine("Nhap duong dan file nhan: ");
+            string Duong_dan_nhan = Console.ReadLine();
+
+            FileInfo File_gui = new FileInfo(Duong_dan_gui);
+            FileInfo File_nhan = new FileInfo(Duong_dan_nhan);
+            try
+            {
+                Copy_file(File_gui, File_nhan);
+                Console.WriteLine("Dang copy");
+            }
+            catch (IOException e)
+            {
+                Console.WriteLine("Khong the copy");
+                Console.Error.WriteLine(e.Message);
+            }
+        }
+
+        static void Copy_file (FileInfo File_gui, FileInfo File_nhan)
+        {
+            File_gui.CopyTo(File_nhan.FullName, true);
+        }
+
+
+        // Hiện Thị file gửi và file nhận
+        private static void CopyFileUsingStream(FileInfo File_gui, FileInfo File_nhan)
+        {
+            StreamReader reader = null;
+            StreamWriter writer = null;
+            try
+            {
+                reader = new StreamReader(File_gui.FullName);
+                writer = new StreamWriter(File_nhan.FullName);
+                Char[] buffer = new Char[1024];
+                int length;
+                while ((length = reader.Read()) > 0)
+                {
+                    writer.Write(buffer, 0, length);
+                }
+            }
+            finally
+            {
+                reader.Close();
+                reader.Dispose();
+                writer.Close();
+                writer.Dispose();
+            }
+
+
+
+
+
+
+
             /***************************/
             //[Thực hành] Tính tổng các số trong file text
-
-            Tinh_tong_cac_so_trong_file();
+            // Tinh_tong_cac_so_trong_file();
             #endregion
 
 
@@ -132,7 +192,14 @@ namespace Codegym_bai_tap
 
 
             Console.ReadKey();
-            #region Các hàm bài tập
+
+
+
+
+
+
+
+          
 
 
 
