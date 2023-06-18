@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,13 +11,24 @@ namespace Codegym_bai_tap
     {
         static void Main(string[] args)
         {
-           
+            #region Bài tập về FILE
+            /***************************/
+            //[Thực hành] Tính tổng các số trong file text
+
+            Tinh_tong_cac_so_trong_file();
+            #endregion
+
+
+
+
+
+
 
             #region Bài tập về hàm
 
             /***************************/
             //[Bài tập] Viết phương thức đếm số lần xuất hiện của ký tự trong chuỗi
-             viet_phuong_thuc_dem_so_lan_xuat_hien_cua_ky_tu();
+            //viet_phuong_thuc_dem_so_lan_xuat_hien_cua_ky_tu();
 
             /***************************/
             //[Bài tập] Viết phương thức xoá phần tử khỏi mảng
@@ -120,9 +132,52 @@ namespace Codegym_bai_tap
 
 
             Console.ReadKey();
+            #region Các hàm bài tập
+
+
+
+
+
+
+#region Các hàm bài tập
+
+           
+/*******************************************************************************************************************************************************/
+
+            void Tinh_tong_cac_so_trong_file()
+            {
+                /*Ghi các số vào file
+                            using (StreamWriter Wr = new StreamWriter("input.txt", false))
+                            {
+                                Wr.WriteLine("5");
+                                Wr.WriteLine("3");
+                                Wr.WriteLine("6");
+                                Wr.WriteLine("1");
+                                Wr.WriteLine("8");
+                                // Wr.WriteLine("656");
+                            }*/
+
+
+
+                // đọc file
+                try
+                {
+                    using (StreamReader sr = new StreamReader("input.txt"))
+                    {
+                        string line;
+                        int sum = 0;
+                        while ((line = sr.ReadLine()) != null)
+                        {
+                            Console.WriteLine(line);
+                            sum += int.Parse(line);
+                        }
+                        Console.WriteLine("Tong cac so trong file la: " + sum);
+                    }
+                }
+                catch (System.Exception) { Console.WriteLine("File khong ton tai"); }
+            }
         }
 
-        #region Các hàm bài tập
 
 /*******************************************************************************************************************************************************/
 
